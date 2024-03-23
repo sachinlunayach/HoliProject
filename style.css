@@ -16,7 +16,10 @@
     font-family: 'Pacifico' , cursive;
     font-size: 100px;
     font-weight: 700;
-    color: #f48fd1;
+    /* color: #a7f48f; */
+    background: linear-gradient(to right, #FF6B6B, #0b0833, #FFE66B, #6BFFAA, #6BD9FF, #A45CFF);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
     text-align: center;
     position: absolute;
     top: 50%;
