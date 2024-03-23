@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C1YYEK26D1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C1YYEK26D1');
+</script>
+<style>
+    @media screen and (max-width: 500px) {
+      .sec1 {
+        padding: 20% 5% 0% 5%;
+        color: yellow;
+      }
+
+      .sec1>span {
+        font-size: 25vw;
+      }
+
+      .sec2 {
+        width: 70px;
+        height: 70px;
+        margin-top: -85px;
+        margin-right: -50px;
+      }
+
+      /* Add styles for smaller screens */
+      .happy {
+        font-size: 50px;
+        font-weight: 170;
+        top: 56%;
+      }
+
+      span.next {
+        margin-right: -163px;
+      }
+
+      #cameraContainer {
+        position: fixed;
+        bottom: 90px;
+        right: 270px;
+        max-width: 150px;
+        max-height: 150px;
+      }
+
+      #capturedImage {
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+      }
+    }
+</style>
+<body>
+    <canvas id="birthday"></canvas>
+
+
+
+    <script>
+        function updateYear() {
+         
+            
+            var yearElement = document.getElementById('year');
+            if (yearElement) {
+              yearElement.textContent = '202';
+              
+            }
+          
+        }
+
+        function startAnimation() {
+            var userName = localStorage.getItem('name');
+            if (userName) {
+                updateYear();
+
+                var happyDiv = document.createElement('div');
+                happyDiv.className = 'happy show';
+                happyDiv.innerText = "Happy Holi, " + userName;
+
+                document.body.appendChild(happyDiv);
+
+                happyDiv.classList.add('show');
+              
+                
+                playBackgroundAudio();
+                    myFirework();
+                    speakGreeting("Happy Holi, " + userName);
+            }
+        }
+       
+
+        function speakGreeting(message) {
+            var speechSynthesis = window.speechSynthesis;
+            var utterance = new SpeechSynthesisUtterance(message);
+            speechSynthesis.speak(utterance);
+        }
+      
+
+
+        function playBackgroundAudio() {
+            var audio = new Audio("holi.mp3");
+            audio.volume = 1.0;
+            audio.play().then(_ => {
+            }).catch(error => {
+                console.error('Error playing audio:', error);
+            });
+        }
+
+
+    
+    window.onload = startAnimation;
+    if (performance.navigation.type === 1) {
+            window.location.href = "index.html";
+        }
+
+    </script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="script.js"></script>
+    <script src="wish.js"></script>
+</body>
+</html> 
+
+ 
