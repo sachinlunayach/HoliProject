@@ -105,14 +105,34 @@
       
 
 
+        // function playBackgroundAudio() {
+        //     var audio = new Audio("holi.mp3");
+        //     audio.volume = 1.0;
+        //     audio.play().then(_ => {
+        //     }).catch(error => {
+        //         console.error('Error playing audio:', error);
+        //     });
+        // }
         function playBackgroundAudio() {
-            var audio = new Audio("holi.mp3");
-            audio.volume = 1.0;
-            audio.play().then(_ => {
-            }).catch(error => {
-                console.error('Error playing audio:', error);
-            });
-        }
+    var audio = new Audio("holi.mp3");
+    audio.volume = 1.0;
+
+    // Function to restart audio playback when it ends
+    function restartAudio() {
+        audio.currentTime = 0; // Reset audio to the beginning
+        audio.play(); // Start playback again
+    }
+
+    // Add event listener for 'ended' event
+    audio.addEventListener('ended', restartAudio);
+
+    // Initial playback
+    audio.play().then(_ => {
+        console.log('Audio started playing.');
+    }).catch(error => {
+        console.error('Error playing audio:', error);
+    });
+}
 
 
     
